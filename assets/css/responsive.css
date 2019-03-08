@@ -1,0 +1,58 @@
+/*============================================================  
+                    Mobile First Method  
+ =============================================================*/
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 1280px) {
+	.container{max-width:100%;}
+}
+
+/* Custom, iPhone Retina */ 
+@media only screen and (max-width : 1199px) {
+	.site-navbar-list li a{font-size:16px;}
+}
+/* Custom, iPhone Retina */ 
+@media only screen and (max-width : 992px) {
+	.ms-center-col{max-width:460px;}
+	
+}
+@media only screen and (max-width : 880px) {
+	.ms-center-col{max-width:400px;padding: 0px 20px;}
+	.ms-side-col .vlog-format-action.small,
+	.ex-category-slider .vlog-format-action.small
+	{height:40px;width: 40px;display:flex;align-items:center;justify-content:center;padding:0px;top:-30px;}
+	.ms-side-col .vlog-format-action.small i,
+	.ex-category-slider .vlog-format-action.small i
+	{font-size:16px;}
+	.share-icons{font-size:14px;}
+
+	.section-heading h2{margin: 30px 0px 10px;font-size:25px;text-align:left;}
+	.single-category-title h1{font-size:22px;}
+	.ex-category-slider{margin:0px -10px;}
+	.ex-category-slider .slide-vd{margin:0px 10px;}
+
+	.share-icons span{margin:0px 2px;}
+}
+@media only screen and (max-width : 768px) {
+	.site-navbar-list > li:first-child, .site-navbar-list > li:nth-child(2){max-width:unset;}
+	.site-navbar-list > li {width:auto;padding:0px 15px;}
+	.site-navbar-list li a{font-size:14px;}
+	.sub-menu{right:0px;}
+
+	/*footer*/
+	.footer-menu li{width:auto;}
+}
+@media only screen and (max-width : 736px){
+	.ms-side-col.left{display:none;}
+	.ms-center-col{max-width:556px;padding-left:0px;padding-right:15px;}
+
+	.footer-menu li a{font-size:12px;}
+}
+@media only screen and (max-width : 667px){
+	.ms-center-col{max-width:100%;padding:0px;}
+	.ms-side-col{display:none;}
+	.ex-category-slider .slick-next{right:0px;z-index: 10;}
+	.ex-category-slider .slick-prev{left:0px;z-index: 10;}
+}
+@media only screen and (max-width : 568px){
+	.footer-inner{flex-wrap:wrap;justify-content:center;}
+}
