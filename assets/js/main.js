@@ -43,6 +43,14 @@ $('.ms-slider').slick({
 =============================*/
 function theme_script(){
   
+  
+
+  $('.menuTricker').click(function(e){
+      e.preventDefault();
+      $(this).toggleClass('collapsed');
+      $('.site-navbar-list').slideToggle();
+  });
+
   $('.nav-dropdown > a').click(function(e){
       e.preventDefault();
       if ($(this).parent().hasClass('show')){
@@ -50,12 +58,11 @@ function theme_script(){
     } else {
        $('.nav-dropdown ').removeClass('show');
        $(this).parent().addClass('show');
+       $(this).parent().parent().parent('.nav-dropdown').addClass('show');
       }
   });
 
-  $(document).click(function(){
-    $('.nav-dropdown ').removeClass('show');
-  });
+  
 
   /* Clicks within the dropdown won't make
      it past the dropdown itself */

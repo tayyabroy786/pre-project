@@ -112,10 +112,10 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 0px;
   border: 2px solid #010101;
   margin:20px 0px 40px;
 }
+.site-navbar-list > li{padding: 10px 10px;white-space:nowrap;}
 .site-navbar-list li{
   width: 100%;
   text-align: center;
@@ -149,15 +149,18 @@ body {
   font-size:15px;position:relative;
   top:1px;left:5px;
 }
-/*hover*/
-.site-navbar-list li a:hover,
-.site-navbar-list li.nav-dropdown:hover,
-.site-navbar-list li.active > a,
-.site-navbar-list li.show > a,
-.site-navbar-list li.nav-dropdown.active,
-.site-navbar-list li.nav-dropdown.show{
-  color:#1ab032;
+.site-navbar-list li:hover,
+.site-navbar-list li:focus,
+.site-navbar-list li.active{
+  background:#1eae33;
+  color:#ffffff; 
 }
+.site-navbar-list li:hover > a,
+.site-navbar-list li:focus > a,
+.site-navbar-list li.active> a{
+  color:#ffffff;
+}
+
 
 /*sub-menu*/
 li.nav-dropdown{
@@ -167,7 +170,8 @@ li.nav-dropdown{
   display:none;
   list-style:none;
   position:absolute;
-  top:32px;width:100%;
+  top:100%;width:100%;
+  left:0px;
   background:#ffffff;
   text-align:center;
   z-index: 100;
@@ -188,12 +192,14 @@ li.nav-dropdown{
   background:#1eae33;
   color:#ffffff;
 }
+
 /*show*/
-.nav-dropdown.show > .sub-menu{display:block;}
+li.nav-dropdown:hover > .sub-menu{display:block;}
 /*2nd level dropdown*/
 .sub-menu .sub-menu{
   right:-100%;
   top:15px;
+  left:auto;
 }
 .sub-menu .nav-dropdown > a:after{font-size:14px;}
 
@@ -205,13 +211,77 @@ li.nav-dropdown{
 .sub-menu li.nav-dropdown:hover > .sub-menu{display:block;}
 
 
+
+/*Mobile Toggler*/
+
+.mb-menu{
+  display:none;
+  min-height: 70px;
+  align-items: center;
+}
+.navbar-toggler.menuTricker{
+  display: none;
+  position: relative;
+  padding:0px 10px;
+  cursor: pointer;
+  outline: none;
+  margin-left:auto;
+}
+.navbar-toggler span {
+    display: block;
+    background-color:#010101;
+    height: 2px;
+    width: 40px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+    left: 0;
+    opacity: 1;
+}
+.navbar-toggler span:nth-child(1), .navbar-toggler span:nth-child(3) {
+    -webkit-transition: -webkit-transform .35s ease-in-out;
+    transition: -webkit-transform .35s ease-in-out;
+    -o-transition: transform .35s ease-in-out;
+    transition: transform .35s ease-in-out;
+    transition: transform .35s ease-in-out, -webkit-transform .35s ease-in-out;
+}
+.navbar-toggler:not(.collapsed) span:nth-child(1) {
+    position: absolute;
+    left: 12px;
+    top: 4px;
+    -webkit-transform: rotate(135deg);
+    -ms-transform: rotate(135deg);
+    transform: rotate(135deg);
+}
+.navbar-toggler:not(.collapsed) span:nth-child(2) {
+    height: 12px;
+    visibility: hidden;
+}
+.navbar-toggler:not(.collapsed) span:nth-child(3) {
+    position: absolute;
+    left: 12px;
+    top: 4px;
+    -webkit-transform: rotate(-135deg);
+    -ms-transform: rotate(-135deg);
+    transform: rotate(-135deg);
+}
 /*********************************
             4 ) Home Page        
 ***********************************/
+.main-slider-wrapper{
+  background: #1eae33;
+  padding: 20px 0px;
+}
 .main-slider{
-  display:flex;
+  display: flex;
   align-items: center;
-  justify-content:center;
+  justify-content: center;
+  background: #fff;
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 1px 1px 21px -1px rgba(0,0,0,0.85);
 }
 .ms-center-col{
   width:100%;
@@ -268,14 +338,17 @@ li.nav-dropdown{
 }
 
 .single-category-title h1{
-  display:inline-block;
-  position:relative;
-  font-weight:600;
-  font-size:30px;
+  display: inline-block;
+  position: relative;
+  font-weight: 600;
+  font-size: 25px;
   margin: 10px auto 20px;
-  padding-bottom: 15px;
-  border-bottom: 3px solid #eee;
+  border-bottom: none;
   text-transform: uppercase;
+  width: 100%;
+  background: #21ac3a;
+  padding: 10px;
+  color: #ffff;
 }
 .single-category-title h1::after {
   content: "";
@@ -287,6 +360,7 @@ li.nav-dropdown{
   right: 50%;
   bottom: -3px;
   margin-left: -25px;
+  display:none;
 }
 /*Slider + video Work*/
 .ex-category-slider{
@@ -387,28 +461,113 @@ li.nav-dropdown{
 .share-icons span a:hover,
 .share-icons span a:focus{color:#1eae33;}
 
-
 /***********************************
-            4 ) Footer      
+            5 ) Signup        
+************************************/
+.site-main{min-height:100vh;}
+
+.singup-wrap{
+  max-width: 760px;
+  margin: 0px auto;
+  border: 2px solid #010101;
+  border-radius:4px;
+  padding:30px;
+  margin-bottom:40px;
+  text-align:center;
+}
+.singup-wrap.bg,
+.site-sidebar.bg{
+  background: url('../img/form-bg.jpg')no-repeat;
+  background-size: cover;
+  background-position:center;
+}
+
+.signup-form p{
+  color: #fff;
+  font-weight: 600;
+}
+.singup-wrap h3{
+  display: inline-block;
+  font-weight: 700;
+  font-size: 31px;
+  text-transform: uppercase;
+  padding: 10px 0px;
+  color: #010101;
+  border-bottom: 2px solid #010101;
+  margin: 0px auto 30px;
+}
+.edit-profile-wrap{
+  border:none;
+  padding:0px 15px;
+  text-align:left;
+}
+/***********************************
+            6 ) Edit Profile        
+************************************/
+/*sidebar*/
+.site-sidebar{
+  padding:20px 30px;
+  border:2px solid #010101;
+  margin-bottom:30px;
+}
+.site-sidebar h4{
+  font-size: 25px;
+  text-align: center;
+  padding: 0px 20px 20px;
+  color: #1a1a1a;
+  font-weight: 600;
+}
+
+.treding-videos .slide-vd video{
+  width:100%;border-radius:4px;border-bottom-left-radius:0px;border-bottom-right-radius:0px;
+}
+.treding-videos .slide-vd{
+  margin-bottom:30px;
+}
+/***********************************
+            7 ) Aboutus page      
+************************************/
+.site-page h2{
+  font-size: 25px;
+  padding: 0px 0px 20px;
+  color: #1a1a1a;
+  font-weight: 600;
+  text-transform:uppercase;
+}
+.site-page p{
+   font-size: 18px;
+   line-height:1.3;
+  padding: 0px 0px 20px;
+  color: #1a1a1a;
+}
+/***********************************
+            10 ) Footer      
 ***********************************/
 .site-footer{
   border-top: 1px solid #010101;
   background: #010101;
-  padding:5px 0px;
+  padding:20px 0px 10px;
 }
-.footer-inner{
-  display: flex;
-  align-items: center;
+
+.footer-col{
+  margin:20px 0px;
 }
-.footer-menu{
+.footer-col h4{
+  display: inline-block;
+  font-weight:700;
+  font-size:18px;
+  text-transform: uppercase;
+  width: 100%;
+  padding: 10px;
+  color:#1eae33;
+}
+
+.footer-links{
   width:100%;
   list-style:none;
-  display:flex;
-  justify-content:space-between;
-  padding:0px 20px;
 }
-.footer-menu li{width:100%;text-align:center;}
-.footer-menu li a{
+.footer-links li{width:100%;text-align:left;padding:5px 10px;}
+.footer-links li a{
   display:inline-block;
   font-size: 14px;
   color: #fff;
@@ -416,8 +575,17 @@ li.nav-dropdown{
   letter-spacing: 1px;
   text-transform: uppercase;
   font-weight: 600;
+  white-space: nowrap;
 }
-.footer-menu li a:hover,
-.footer-menu li a:focus{
+.footer-links li a:hover,
+.footer-links li a:focus{
   color:#1eae33;
 }
+
+.footer-col .treding-videos .slide-vd{margin-bottom:0px;max-width:180px;}
+.footer-col .entry-meta{background:#ffffff;}
+.footer-col .vlog-format-action.small
+  {height:40px;width: 40px;display:flex;align-items:center;justify-content:center;padding:0px;top:-30px;}
+.footer-col .vlog-format-action.small i
+  {font-size:16px;}
+ .footer-col  .share-icons{font-size:14px;}

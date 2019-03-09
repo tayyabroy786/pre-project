@@ -34,7 +34,7 @@
 }
 @media only screen and (max-width : 768px) {
 	.site-navbar-list > li:first-child, .site-navbar-list > li:nth-child(2){max-width:unset;}
-	.site-navbar-list > li {width:auto;padding:0px 15px;}
+	.site-navbar-list > li {padding:10px 15px;}
 	.site-navbar-list li a{font-size:14px;}
 	.sub-menu{right:0px;}
 
@@ -42,12 +42,33 @@
 	.footer-menu li{width:auto;}
 }
 @media only screen and (max-width : 736px){
+	.site-navbar-list li a{font-size:12px;}
+	.nav-dropdown > a::after{border-top:.3em solid;border-right:.3em solid transparent;border-left:.3em solid transparent;}
+
 	.ms-side-col.left{display:none;}
 	.ms-center-col{max-width:556px;padding-left:0px;padding-right:15px;}
-
 	.footer-menu li a{font-size:12px;}
 }
 @media only screen and (max-width : 667px){
+	/*Menu*/
+	.mb-menu{display:flex;border-bottom: 2px solid #010101;margin-bottom: 20px;}
+	.site-navbar-list{display:none;}
+	.navbar-toggler.menuTricker{display:block;}
+	
+	.site-navbar-list{margin-top:0px;padding:10px 5px;}
+	.site-navbar-list > li{border:none;text-align:left;}
+	.site-navbar-list li a{font-size:14px;}
+	li.nav-dropdown:hover > .sub-menu{display:none;}
+	.sub-menu li.nav-dropdown:hover > .sub-menu{display:none;}
+	.nav-dropdown.show > .sub-menu{display:block !important;}
+	
+	.sub-menu{position:relative;box-shadow:none;margin: 10px 0px;}
+	.sub-menu li{text-align:left;}
+	.sub-menu li a{border:none;padding:10px 30px;}
+
+	.sub-menu .sub-menu{right:0px;top:0px;}
+	.sub-menu .sub-menu li a{padding:10px 40px;}
+
 	.ms-center-col{max-width:100%;padding:0px;}
 	.ms-side-col{display:none;}
 	.ex-category-slider .slick-next{right:0px;z-index: 10;}
@@ -55,4 +76,19 @@
 }
 @media only screen and (max-width : 568px){
 	.footer-inner{flex-wrap:wrap;justify-content:center;}
+	.singup-wrap{padding:10px;}
+	.edit-profile-wrap{padding:0px 15px;}
+
+}
+@media only screen and (max-width : 520px){
+	.site-topbar{justify-content:space-between;}
+	.site-search{display:none;}
+	.mb-menu .site-search{display:block !important;}
+
+	.footer-menu{flex-wrap:wrap;justify-content:center;}
+	.footer-menu li a{padding:10px;}
+
+	.site-page p{font-size:14px;}
+
+
 }
