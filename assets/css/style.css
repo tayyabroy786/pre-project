@@ -271,14 +271,18 @@ li.nav-dropdown:hover > .sub-menu{display:block;}
             4 ) Home Page        
 ***********************************/
 .main-slider-wrapper{
-  background: #1eae33;
+  background:url('../img/slider-bg.jpg')no-repeat;
+  background-size:cover !important;
+  background-position:center !important;
   padding: 20px 0px;
 }
 .main-slider{
   display: flex;
   align-items: center;
   justify-content: center;
-  background:transparent;
+  background:url('../img/slider-bg.jpg')no-repeat;
+  background-size:cover !important;
+  background-position:center !important;
   padding: 20px 0px;
   border-radius: 4px;
   box-shadow: 1px 1px 21px -1px rgba(0,0,0,0.85);
@@ -322,7 +326,7 @@ li.nav-dropdown:hover > .sub-menu{display:block;}
 }
 .ms-slider .slick-center{
   width:500px;
-  background:#24ac34;
+  background:#e4ea90;
   padding:20px;
 }
 .slick-slider .slick-track{
@@ -361,7 +365,9 @@ li.nav-dropdown:hover > .sub-menu{display:block;}
   border-bottom: none;
   text-transform: uppercase;
   width: 100%;
-  background: #21ac3a;
+  background:url('../img/cat-bg.jpg')no-repeat;
+  background-size:cover !important;
+  background-position:center !important;
   padding: 10px;
   color: #ffff;
 }
