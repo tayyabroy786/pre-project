@@ -35,7 +35,7 @@ $('.ms-slider').slick({
   infinite: true,
   centerMode: true,
   centerPadding: "0px",
-  speed: 1100,
+  speed: 700,
   draggable: false,
   slidesToShow: 3,
   slidesToScroll: 1,
